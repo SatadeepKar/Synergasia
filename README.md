@@ -104,13 +104,6 @@ npm run dev   # starts on http://localhost:5173
 
 ---
 
-## 🌐 Live Demo
-
-| | URL |
-|---|---|
-| Frontend | https://collab-whiteboard.vercel.app |
-| Backend API | https://collab-whiteboard-api.onrender.com |
-
 ---
 
 ## 🔑 API Endpoints
