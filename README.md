@@ -104,7 +104,6 @@ npm run dev   # starts on http://localhost:5173
 
 ---
 
----
 
 ## 🔑 API Endpoints
 
@@ -148,7 +147,7 @@ npm run dev   # starts on http://localhost:5173
 | Backend | Node.js, Express.js |
 | Database | MongoDB + Mongoose |
 | Auth | JWT + bcryptjs |
-| Deployment | Vercel (client) + Render (server) |
+| Deployment | Render (client) + Render (server) |
 
 ---
 
