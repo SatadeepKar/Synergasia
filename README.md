@@ -1,82 +1,83 @@
-# 🎨 CollabBoard — Real-Time Collaborative Whiteboard
+🎨 CollabBoard — Real-Time Collaborative Whiteboard
 
-> A full-stack MERN application for seamless real-time collaboration, combining whiteboard, chat, and video features in one platform.
+A full-stack MERN application for seamless real-time collaboration, combining whiteboard, chat, and video features in one platform.
 
-🌐 **Live Demo:** https://synergasia-hoqr.onrender.com  
+🌐 Live Demo: https://synergasia-hoqr.onrender.com
 
-[![MERN Stack](https://img.shields.io/badge/Stack-MERN-green)](https://www.mongodb.com/)  
-[![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-black)](https://socket.io/)  
+[![MERN Stack](https://img.shields.io/badge/Stack-MERN-green)](https://www.mongodb.com/)
+[![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-black)](https://socket.io/)
 [![WebRTC](https://img.shields.io/badge/Video-WebRTC-blue)](https://webrtc.org/)
 
----
 
-## ✨ Features
+✨ Features
+🔹 Core
 
-### 🔹 Core
-- 🔐 JWT Authentication (Register / Login / Logout)
-- 🏠 Create & join rooms using unique Room IDs
-- ✏️ Real-time whiteboard drawing (Socket.io)
-- 🖌 Tools: Pencil, Eraser, Clear canvas
-- 🎨 Color picker + Brush size control
-- 👥 Multi-user collaboration (room-based)
-- 💬 In-room chat system
-- 💾 Persistent canvas state (MongoDB)
+🔐 JWT Authentication (Register / Login / Logout)
 
----
+🏠 Create & join rooms using unique Room IDs
 
-### 🔹 Intermediate
-- ↩ Undo / Redo (synced across users)
-- 📸 Export whiteboard as PNG
-- 👤 Live user presence tracking
-- 🔒 Protected routes (JWT-based)
-- 👑 Role-based access (Host / Participant)
+✏️ Real-time whiteboard drawing (Socket.io)
 
----
+🖌 Tools: Pencil, Eraser, Clear canvas
 
-### 🔹 Advanced
-- 🖥 Screen sharing (WebRTC)
-- 📎 File sharing within rooms
-- ⏺ Session recording (WebM)
-- 🌙 Dark / Light mode
+🎨 Color picker + Brush size control
 
----
+👥 Multi-user collaboration (room-based)
 
-## 🏗 Project Structure
+💬 In-room chat system
 
+💾 Persistent canvas state (MongoDB)
 
+🔹 Intermediate
+
+↩ Undo / Redo (synced across users)
+
+📸 Export whiteboard as PNG
+
+👤 Live user presence tracking
+
+🔒 Protected routes (JWT-based)
+
+👑 Role-based access (Host / Participant)
+
+🔹 Advanced
+
+🖥 Screen sharing (WebRTC)
+
+📎 File sharing within rooms
+
+⏺ Session recording (WebM)
+
+🌙 Dark / Light mode
+
+🏗 Project Structure
 collab-whiteboard/
-├── server/ # Node.js + Express + Socket.io
-│ ├── config/
-│ ├── controllers/
-│ ├── middleware/
-│ ├── models/
-│ ├── routes/
-│ ├── socket/
-│ └── server.js
+├── server/              # Node.js + Express + Socket.io
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── socket/
+│   └── server.js
 │
-└── client/ # React (Vite)
-└── src/
-├── api/
-├── components/
-├── context/
-└── pages/
+└── client/              # React (Vite)
+    └── src/
+        ├── api/
+        ├── components/
+        ├── context/
+        └── pages/
+🚀 Setup Instructions
+Prerequisites
 
+Node.js ≥ 18
 
----
+MongoDB Atlas (or local MongoDB)
 
-## 🚀 Setup Instructions
-
-### Prerequisites
-- Node.js ≥ 18  
-- MongoDB Atlas (or local MongoDB)
-
----
-
-### 1️⃣ Clone Repository
-```bash
+1️⃣ Clone Repository
 git clone https://github.com/YOUR_USERNAME/collab-whiteboard.git
 cd collab-whiteboard
-### 2️⃣ Backend Setup
+2️⃣ Backend Setup
 cd server
 npm install
 
@@ -90,7 +91,7 @@ CLIENT_URL=http://localhost:5173
 Run backend:
 
 npm run dev
-### 3️⃣ Frontend Setup
+3️⃣ Frontend Setup
 cd ../client
 npm install
 
@@ -101,7 +102,7 @@ VITE_API_URL=http://localhost:5000
 Run frontend:
 
 npm run dev
-### 🔑 API Endpoints
+🔑 API Endpoints
 Method	Route	Description	Auth
 POST	/api/auth/register	Register user	❌
 POST	/api/auth/login	Login & get JWT	❌
@@ -125,7 +126,7 @@ webrtc-offer/answer/ice-candidate	Bidirectional	WebRTC signaling
 🛠 Tech Stack
 Layer	Technology
 Frontend	React, Vite, React Router
-Styling	CSS (custom properties)
+Styling	CSS
 Backend	Node.js, Express
 Real-time	Socket.io
 Video	WebRTC, MediaRecorder API
@@ -136,7 +137,7 @@ Deployment	Render
 
 ⚡ Real-time sync using WebSockets (low latency)
 
-🔁 Conflict handling with optimized socket events (~50% reduction)
+🔁 Reduced sync conflicts by ~50% with optimized socket events
 
 👥 Supports 10+ concurrent users
 
