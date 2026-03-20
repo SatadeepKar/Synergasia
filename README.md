@@ -101,8 +101,6 @@ VITE_API_URL=http://localhost:5000
 Run frontend:
 
 npm run dev
-
----
 🔑 API Endpoints
 Method	Route	Description	Auth
 POST	/api/auth/register	Register user	❌
