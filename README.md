@@ -2,8 +2,7 @@
 
 > A full-stack MERN application for real-time collaborative drawing, inspired by Miro + Zoom.
 <br>
-Visit and use this website at https://synergasia-hoqr.onrender.com
-<br>
+Visit and use this website at https://synergasia-hoqr.onrender.com <br>
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-green)](https://www.mongodb.com/)
 [![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-black)](https://socket.io/)
 [![WebRTC](https://img.shields.io/badge/Video-WebRTC-blue)](https://webrtc.org/)
