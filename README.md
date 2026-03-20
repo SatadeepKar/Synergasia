@@ -76,7 +76,7 @@ collab-whiteboard/
 ```bash
 git clone https://github.com/YOUR_USERNAME/collab-whiteboard.git
 cd collab-whiteboard
-2️⃣ Backend Setup
+### 2️⃣ Backend Setup
 cd server
 npm install
 
@@ -90,7 +90,7 @@ CLIENT_URL=http://localhost:5173
 Run backend:
 
 npm run dev
-3️⃣ Frontend Setup
+### 3️⃣ Frontend Setup
 cd ../client
 npm install
 
@@ -101,7 +101,7 @@ VITE_API_URL=http://localhost:5000
 Run frontend:
 
 npm run dev
-🔑 API Endpoints
+### 🔑 API Endpoints
 Method	Route	Description	Auth
 POST	/api/auth/register	Register user	❌
 POST	/api/auth/login	Login & get JWT	❌
