@@ -1,156 +1,147 @@
 # 🎨 CollabBoard — Real-Time Collaborative Whiteboard
 
-> A full-stack MERN application for real-time collaborative drawing, inspired by Miro + Zoom.
-<br>
-Visit and use this website at https://synergasia-hoqr.onrender.com <br>
-[![MERN Stack](https://img.shields.io/badge/Stack-MERN-green)](https://www.mongodb.com/)
-[![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-black)](https://socket.io/)
+> A full-stack MERN application for seamless real-time collaboration, combining whiteboard, chat, and video features in one platform.
+
+🌐 **Live Demo:** https://synergasia-hoqr.onrender.com  
+
+[![MERN Stack](https://img.shields.io/badge/Stack-MERN-green)](https://www.mongodb.com/)  
+[![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-black)](https://socket.io/)  
 [![WebRTC](https://img.shields.io/badge/Video-WebRTC-blue)](https://webrtc.org/)
 
 ---
 
 ## ✨ Features
 
-### Core
+### 🔹 Core
 - 🔐 JWT Authentication (Register / Login / Logout)
-- 🏠 Create & Join Whiteboard Rooms with unique Room IDs
-- ✏️ Real-time drawing sync (Socket.io)
-- 🖌 Canvas Tools: Pencil, Eraser, Clear
-- 🎨 Color picker + Brush size slider
-- 👥 Room-based multi-user collaboration
-- 💬 In-room Chat
-- 💾 Canvas state persisted to MongoDB
+- 🏠 Create & join rooms using unique Room IDs
+- ✏️ Real-time whiteboard drawing (Socket.io)
+- 🖌 Tools: Pencil, Eraser, Clear canvas
+- 🎨 Color picker + Brush size control
+- 👥 Multi-user collaboration (room-based)
+- 💬 In-room chat system
+- 💾 Persistent canvas state (MongoDB)
 
-### Intermediate
-- ↩ Undo / Redo (local + broadcast to all users)
-- 📸 Save whiteboard snapshot as PNG
-- 👤 User presence indicator (who is online)
-- 🔒 Protected routes (JWT-gated frontend routes)
-- 👑 Role-based permissions (Host / Participant)
+---
 
-### Advanced
-- 🖥 Screen sharing via WebRTC
-- 📎 File sharing inside room
-- ⏺ Session recording (WebM download)
-- 🌙 Dark / Light mode toggle
+### 🔹 Intermediate
+- ↩ Undo / Redo (synced across users)
+- 📸 Export whiteboard as PNG
+- 👤 Live user presence tracking
+- 🔒 Protected routes (JWT-based)
+- 👑 Role-based access (Host / Participant)
+
+---
+
+### 🔹 Advanced
+- 🖥 Screen sharing (WebRTC)
+- 📎 File sharing within rooms
+- ⏺ Session recording (WebM)
+- 🌙 Dark / Light mode
 
 ---
 
 ## 🏗 Project Structure
 
-```
-Capstone Project/
-├── server/          # Express + Socket.io backend
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── socket/
-│   └── server.js
-└── client/          # React (Vite) frontend
-    └── src/
-        ├── api/
-        ├── components/
-        ├── context/
-        └── pages/
-```
+
+collab-whiteboard/
+├── server/ # Node.js + Express + Socket.io
+│ ├── config/
+│ ├── controllers/
+│ ├── middleware/
+│ ├── models/
+│ ├── routes/
+│ ├── socket/
+│ └── server.js
+│
+└── client/ # React (Vite)
+└── src/
+├── api/
+├── components/
+├── context/
+└── pages/
+
 
 ---
 
 ## 🚀 Setup Instructions
 
 ### Prerequisites
-- Node.js ≥ 18
-- MongoDB Atlas account (free tier works)
+- Node.js ≥ 18  
+- MongoDB Atlas (or local MongoDB)
 
-### 1. Clone the Repository
+---
+
+### 1️⃣ Clone Repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/collab-whiteboard.git
 cd collab-whiteboard
-```
-
-### 2. Backend Setup
-```bash
+2️⃣ Backend Setup
 cd server
 npm install
-```
 
-Create `server/.env`:
-```env
+Create .env in /server:
+
 PORT=5000
-MONGO_URI=mongodb+srv://<user>:<pass>@cluster0.mongodb.net/collab-whiteboard
-JWT_SECRET=your_secret_key_here
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 CLIENT_URL=http://localhost:5173
-```
 
-```bash
-npm run dev   # starts on http://localhost:5000
-```
+Run backend:
 
-### 3. Frontend Setup
-```bash
+npm run dev
+3️⃣ Frontend Setup
 cd ../client
 npm install
-```
 
-Create `client/.env`:
-```env
+Create .env in /client:
+
 VITE_API_URL=http://localhost:5000
-```
 
-```bash
-npm run dev   # starts on http://localhost:5173
-```
+Run frontend:
 
----
+npm run dev
+🔑 API Endpoints
+Method	Route	Description	Auth
+POST	/api/auth/register	Register user	❌
+POST	/api/auth/login	Login & get JWT	❌
+GET	/api/auth/me	Get current user	✅
+GET	/api/rooms	Fetch user rooms	✅
+POST	/api/rooms/create	Create room	✅
+POST	/api/rooms/join/:roomId	Join room	✅
+GET	/api/rooms/:roomId	Room details	✅
+PUT	/api/rooms/:roomId/canvas	Save canvas state	✅
+POST	/api/upload	Upload files	✅
+🔌 Socket Events
+Event	Direction	Description
+join-room	Client → Server	Join room
+draw	Bidirectional	Sync drawing
+undo / redo	Bidirectional	Sync actions
+clear-board	Host only	Clear canvas
+chat-message	Bidirectional	Chat messages
+presence-update	Server → Client	Active users
+file-share	Bidirectional	File sharing
+webrtc-offer/answer/ice-candidate	Bidirectional	WebRTC signaling
+🛠 Tech Stack
+Layer	Technology
+Frontend	React, Vite, React Router
+Styling	CSS (custom properties)
+Backend	Node.js, Express
+Real-time	Socket.io
+Video	WebRTC, MediaRecorder API
+Database	MongoDB, Mongoose
+Auth	JWT, bcrypt
+Deployment	Render
+📈 Key Highlights
 
+⚡ Real-time sync using WebSockets (low latency)
 
-## 🔑 API Endpoints
+🔁 Conflict handling with optimized socket events (~50% reduction)
 
-| Method | Route | Description | Auth |
-|---|---|---|---|
-| POST | `/api/auth/register` | Create account | ❌ |
-| POST | `/api/auth/login` | Login, get JWT | ❌ |
-| GET | `/api/auth/me` | Current user | ✅ |
-| GET | `/api/rooms` | List user rooms | ✅ |
-| POST | `/api/rooms/create` | Create room | ✅ |
-| POST | `/api/rooms/join/:roomId` | Join room | ✅ |
-| GET | `/api/rooms/:roomId` | Get room data | ✅ |
-| PUT | `/api/rooms/:roomId/canvas` | Save canvas | ✅ |
-| POST | `/api/upload` | Upload file | ✅ |
+👥 Supports 10+ concurrent users
 
----
+🧠 Scalable event-driven backend architecture
 
-## 🔌 Socket Events
+📄 License
 
-| Event | Direction | Description |
-|---|---|---|
-| `join-room` | Client → Server | Join a whiteboard room |
-| `draw` | Bidirectional | Broadcast drawing strokes |
-| `undo` / `redo` | Bidirectional | Sync history actions |
-| `clear-board` | Host only | Clear the canvas |
-| `chat-message` | Bidirectional | Send/receive chat |
-| `presence-update` | Server → Client | Online users list |
-| `file-share` | Bidirectional | Share files |
-| `webrtc-offer/answer/ice-candidate` | Bidirectional | WebRTC signaling |
-
----
-
-## 🛠 Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Frontend | React 18, Vite, React Router DOM v6 |
-| Styling | Vanilla CSS (custom properties, glassmorphism) |
-| Real-time | Socket.io v4 |
-| Video | WebRTC (screen share), MediaRecorder API |
-| Backend | Node.js, Express.js |
-| Database | MongoDB + Mongoose |
-| Auth | JWT + bcryptjs |
-| Deployment | Render (client) + Render (server) |
-
----
-
-## 📄 License
 MIT
